@@ -1,6 +1,6 @@
 valor1 = parseInt(prompt("Ingrese el primer número"));
 valor2 = parseInt(prompt("Ingrese el segundo número"));
-operacion = prompt("Ingrese la operacion a realizar");
+operacion = prompt("Ingrese la operacion a realizar. Operadores válidos: suma: + , resta: - multiplicación: *, división: /");
 
 if (isNaN(valor1)) {
   console.log(
