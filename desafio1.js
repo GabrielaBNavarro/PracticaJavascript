@@ -7,7 +7,7 @@ if(frase == null){
 }else{
 while(frase !== null){
  cadenas.push(frase)
- frase = prompt('Ingrese una palabra')
+ frase = prompt('Ingrese una palabra o frase, para salir presione "Cancelar"')
 }
 
 console.log(`El texto ingresado es: ${cadenas.join('-')}`)}
