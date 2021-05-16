@@ -2,9 +2,10 @@
 
 let frase = prompt('Ingrese una palabra o frase, para salir presione "Cancelar"')
 let cadenas =[]
-if(frase == null){
+if(frase == null || frase=== "" ){
     console.error('Usted no ha ingresado texto')
 }else{
+
 while(frase !== null){
  cadenas.push(frase)
  frase = prompt('Ingrese una palabra o frase, para salir presione "Cancelar"')
