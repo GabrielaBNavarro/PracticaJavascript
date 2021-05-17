@@ -4,11 +4,14 @@ function agregarProducto(producto) {
     return carrito.push(producto)
 }
 function listarProductos(){
-    return carrito.join('-');
+    for (producto of carrito){
+        console.log(producto)
+    }
+    return "Fin del carrito";
 }
 function buscarProducto(producto){
-    producto= producto.toLowerCase()
-    encontrado = carrito.find(produc => produc== producto)
+   producto= producto.toLowerCase()
+   let encontrado = carrito.find(produc => produc== producto)
         
     
     console.log(encontrado)
@@ -37,7 +40,7 @@ function filtrarProductos(prod){
 }
 function eliminarProducto(producto){
     producto= producto.toLowerCase()
-    posicion=carrito.indexOf(producto)
+    let posicion=carrito.indexOf(producto)
     if (posicion >=0){
             
     carrito.splice(posicion,1)
