@@ -1,7 +1,12 @@
 let carrito = ['sal','aceite','azucar','arroz','fideos','fideos2','pan','tomate','salame']
-function agregarProducto(producto) {
-    producto= producto.toLowerCase()
-    return carrito.push(producto)
+function agregarProducto() {
+   let producto= prompt ("Ingrese un producto")
+   while (producto){
+       carrito.push(producto.trim().toLowerCase())
+       producto= prompt ("Ingrese un producto")
+
+   }
+    
 }
 function listarProductos(){
     for (producto of carrito){
@@ -9,18 +14,27 @@ function listarProductos(){
     }
     return "Fin del carrito";
 }
-function buscarProducto(producto){
-   producto= producto.toLowerCase()
-   let encontrado = carrito.find(produc => produc== producto)
-        
-    
-    console.log(encontrado)
-    if (encontrado != null){
+function listarProductos2(){
+    console.log("Productos del carrito")
+    carrito.map(function (producto, index){
+        console.log(`${index +1} - ${producto}`)
+    })
+}
+function buscarProducto(){
+   let producto= prompt("Ingrese el producto que desea buscar")
+   if(producto){ 
+   let encontrado = carrito.find(produc => produc== producto.trim().toLowerCase())
+   if (encontrado){
 
     return "Se encontró el elemento " + encontrado}
     else{
         return "No se encontró el producto en el carrito"
-    }
+    }}
+   else {
+       console.error("No se ingresó producto a buscar")
+   }    
+    
+    
 }
 
 
