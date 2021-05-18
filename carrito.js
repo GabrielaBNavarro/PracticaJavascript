@@ -52,6 +52,21 @@ function filtrarProductos(prod){
         return "No se han encontrados productos"
     }
 }
+function filtrarProductos2(){
+    let producto = prompt("Ingrese el producto o palabra")
+    if(producto){
+        let productos= carrito.filter(function(produc){
+            return produc.indexOf(producto.trim().touppercase()) > -1
+        }) 
+        if (productos.lenght > 0){
+            return productos;
+        } else{
+            console.error("No se encontró ningún producto con esa búsqueda")
+        }
+    }else{
+        console.error("Campo vaciío o cancelado")
+    }
+}
 function eliminarProducto(producto){
     producto= producto.toLowerCase()
     let posicion=carrito.indexOf(producto)
@@ -63,3 +78,23 @@ function eliminarProducto(producto){
         return "El producto no puede ser eliminado porque no está en el carrito"
     }
 }
+
+function eliminarProducto2() {
+    let pos = prompt("Ingrese el número del producto a eliminar");
+    if (pos) {
+      pos = parseInt(pos);
+      let producto = carrito[pos - 1];
+      if (producto !== undefined) {
+        let validar = confirm(`Esta seguro que quiere eliminar ${producto}`);
+        if (validar) {
+          carrito.splice(pos - 1, 1);
+          console.log(`Eliminado el producto ${producto}`);
+          listarProductos();
+        }
+      } else {
+        console.error("No hay producto con esa posición");
+      }
+    } else {
+      console.error("Ocurrió un error y no es posible realizar la acción");
+    }
+  }
