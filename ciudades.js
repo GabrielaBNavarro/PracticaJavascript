@@ -6,7 +6,7 @@ Añade en última posición la ciudad de París.
 Escribe por pantalla el elemento que ocupa la segunda posición.
 Sustituye el elemento que ocupa la segunda posición por la ciudad de 'Barcelona'.*/
 document.write("Ciudades <br>")
-let ciudad = prompt("Ingrese el nombre de la ciudad");
+let ciudad = prompt("Ingrese el nombre de la ciudad. Para salir ingrese 0 o presione el botón de Cancelar ");
 let ciudades = [];
 if (ciudad == null || ciudad == ""){
     alert("Usted no ha ingresado una ciudad")
@@ -18,7 +18,7 @@ while (ciudad && ciudad != "0") {
     ciudad = ciudad.charAt(0).toUpperCase() + ciudad.substr(1,ciudad.length-1).toLowerCase();
     ciudades.push(ciudad);
     }
-    ciudad = prompt("Ingrese el nombre de la ciudad");
+    ciudad = prompt("Ingrese el nombre de la ciudad. Para salir ingrese 0 o presione el botón de Cancelar ");
 
 }
 finalizar()
