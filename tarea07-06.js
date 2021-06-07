@@ -45,16 +45,7 @@ function listarContactos() {
   console.warn('No hay contactos para mostrar')
 }
 }
-function buscarContacto(nombre){
-  let contacto = agenda.find(function (contact) {
-    return agenda.nombre === nombre;
-  });
 
-  if(contacto){
-    console.log(`El teléfono de ${contacto.nombre} es: ${contacto.telefono}`);
-    console.log("=============================================");
-  }
-}
 function existeContacto(nombre) {
   let encontrado = agenda.find(function (contacto) {
     return contacto.nombre.toUpperCase() === nombre.toUpperCase();
@@ -84,9 +75,10 @@ function buscarContacto(nombre) {
     let idContacto= agenda.findIndex(function(contacto){
       return contacto.nombre.toUpperCase() == nombre.toUpperCase();
     })
+    
     if (idContacto>-1) {
       let validar = confirm('Está seguro que quiere eliminar el contacto?')
-    }
+    
     if (validar){
       agenda.splice(idContacto,1)
       localStorage.setItem('agenda', JSON.stringify(agenda))
@@ -94,7 +86,7 @@ function buscarContacto(nombre) {
     } else {
       console.log('El contacto no existe')
     }
-  }
+  }}
 
 function agendaLlena(){
     if(agenda.length >= 10){

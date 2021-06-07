@@ -279,12 +279,13 @@ function delUser(username){
   })
   if (idUser>-1) {
     let validar = confirm('Está seguro que quiere eliminar el usuario?')
-  }
+  
   if (validar){
     usuarios.splice(idUser,1)
     localStorage.setItem('usuarios', JSON.stringify(usuarios))
     console.log('El usuario ha sido borrado')
   } else {
     console.log('El usuario no existe')
-  }
+  }}
+  
 }
