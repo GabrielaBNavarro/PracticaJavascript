@@ -1,0 +1,20 @@
+body {
+    background: linear-gradient(to left, #17cec5 0%, #5bcdd1 50%, #0e4685 100%);
+    color: white;
+    margin: 30px;
+}
+  .game {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  #play {
+    font-size: 50px;
+    padding: 20px;
+    background-color: rgb(103, 18, 240);
+    
+  }
+  img{
+    height: 50vh;
+  }
