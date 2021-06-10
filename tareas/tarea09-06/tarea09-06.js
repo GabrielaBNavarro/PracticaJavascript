@@ -11,11 +11,14 @@ document.querySelector('#inGame').style.visibility = "hidden";
 function letsPlay(){
     document.querySelector('#inGame').style.visibility = "visible";
     numeroAleatorio()
+    
 }
 
 function numeroAleatorio(){
  numero= Math.round(Math.random()*100)
+ document.querySelector('#numIngresado').focus()
 }
+
 
 function numeroUsuario(){
     numUsuario = parseInt(document.querySelector('#numIngresado').value)
@@ -26,6 +29,8 @@ function numeroUsuario(){
      while( numero !== numUsuario){
       if( numero < numUsuario){
             alert('Te pasaste! el número que buscas es más pequeño')
+            document.querySelector('#numIngresado').value=""
+            document.querySelector('#numIngresado').focus()
            return
       }else {
         alert('Casi! el número que buscas es mayor!')
